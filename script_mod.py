@@ -19,13 +19,11 @@ from keras.layers import Input, LSTM, Dense
 from keras.models import Model
 from keras.models import load_model
 
-from google.colab import drive
-drive.mount('/content/drive')
 
 """# Prep data"""
 
-data_path = "/content/drive/Shareddrives/Chat Bot/1. Dataset_espanol/preguntaciencia.txt"
-data_path2 ="/content/drive/Shareddrives/Chat Bot/1. Dataset_espanol/respuestaciencia.txt"
+data_path = "/preguntaciencia.txt"
+data_path2 ="/respuestaciencia.txt"
 # Defining lines as a list of each line
 with open(data_path, 'r', encoding='utf-8') as f:
   lines = f.read().split('\n')
@@ -184,9 +182,9 @@ class ChatBot:
     self.chat(user_response)
     
 #Method to handle the conversation
-  def chat(self, reply):
-    while not self.make_exit(reply):
-      reply = input(self.generate_response(reply)+"\n")
+#  def chat(self, reply):
+#    while not self.make_exit(reply):
+#      reply = input(self.generate_response(reply)+"\n")
     
   #Method to convert user input into a matrix
   def string_to_matrix(self, user_input):
@@ -207,13 +205,13 @@ class ChatBot:
     chatbot_response = chatbot_response.replace("<END>",'')
     return chatbot_response    
 #Method to check for exit commands
-  def make_exit(self, reply):
-    for exit_command in self.exit_commands:
-      if exit_command in reply:
-        print("Te deseo un buen dia!")
-        return True
-    return False
+#  def make_exit(self, reply):
+#    for exit_command in self.exit_commands:
+#      if exit_command in reply:
+#        print("Te deseo un buen dia!")
+#        return True
+#    return False
   
-chatbot = ChatBot()
+#chatbot = ChatBot()
 
-chatbot.start_chat() #¿Cuál es el planeta más pequeño?
+#chatbot.start_chat() #¿Cuál es el planeta más pequeño?
