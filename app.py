@@ -80,7 +80,7 @@ def webhook():
                         target_docs = []
                         input_tokens = set()
                         target_tokens = set()
-                        for line in pairs[:300]:
+                        for line in pairs[:604]:
                           input_doc, target_doc = line[0], line[1]
                           # Appending each input sentence to input_docs
                           input_docs.append(input_doc)
@@ -165,7 +165,7 @@ def webhook():
                         #training_model.load_weights('base_dir)
                         
                         #training_model.save()
-                        training_model.save_weights(base_dir)
+                        #training_model.save_weights(base_dir)
 
                         entrenamiento = base_dir #+ 'my_weights.model.data-00000-of-00001' 
                         #training_model = load_model(entrenamiento)
