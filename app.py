@@ -49,9 +49,14 @@ def webhook():
                     sender_id = messaging_event['sender']['id']  # el facebook ID de la persona enviando el mensaje
                     recipient_id = messaging_event['recipient']['id']  # el facebook ID de la pagina que recibe (tu pagina)
                     message_text = messaging_event['message']['text']  # el texto del mensaje
+                    
+                    ####
+                    respuesta = generate_response(message_text)
+                    ####
                               
                     if inteligente:
-                        send_message(sender_id, 'Hola, esto es una prueba de chatbot ciencia')
+                        #send_message(sender_id, 'Hola, esto es una prueba de chatbot ciencia')
+                        send_message(sender_id, respuesta)
                     else:
                         send_message(sender_id, 'Hola')
 
