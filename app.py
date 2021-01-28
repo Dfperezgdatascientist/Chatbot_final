@@ -143,8 +143,8 @@ def webhook():
                         #Dimensionality
                         dimensionality = 256
                         #The batch size and number of epochs
-                        batch_size = 10
-                        epochs = 600
+                        #batch_size = 10
+                        #epochs = 600
                         #Encoder
                         encoder_inputs = Input(shape=(None, num_encoder_tokens))
                         encoder_lstm = LSTM(dimensionality, return_state=True)
@@ -163,11 +163,7 @@ def webhook():
                         training_model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
                         #dir2= base_dir + "training_model.hdf5"
                         #training_model.load_weights('base_dir)
-
-                        #Training
-                        #training_model.fit([encoder_input_data, decoder_input_data], decoder_target_data, batch_size = batch_size, epochs = epochs, validation_split = 0.2)
-                        #training_model.save(base_dir + 'training_model.hdf5')
-
+                        
                         #training_model.save()
                         training_model.save_weights(base_dir)
 
@@ -225,7 +221,7 @@ def webhook():
                             user_response = input("hola"+"\n")
 
                             if user_response in self.negative_responses:
-                              print("Ok, Que tengas un gran día!")
+                              print("Ok, Que tengas un gran dÃ­a!")
                               return
                             self.chat(user_response)
                         #Method to handle the conversation
@@ -256,7 +252,7 @@ def webhook():
                           def make_exit(self, reply):
                             for exit_command in self.exit_commands:
                               if exit_command in reply:
-                                print("Ok, Que tengas buen di�a!")
+                                print("Ok, Que tengas buen di­a!")
                                 return True
                             return False
 
