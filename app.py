@@ -167,9 +167,11 @@ def webhook():
                         #training_model.save()
                         training_model.save_weights(base_dir)
 
-                        entrenamiento = base_dir + 'entrenado' 
+                        entrenamiento = base_dir + 'my_weights.model.data-00000-of-00001' 
                         #training_model = load_model(entrenamiento)
+                        #training_model.load_weights(entrenamiento)                        
                         training_model.load_weights(entrenamiento)
+                        
                         encoder_inputs = training_model.input[0]
                         encoder_outputs, state_h_enc, state_c_enc = training_model.layers[2].output
                         encoder_states = [state_h_enc, state_c_enc]
