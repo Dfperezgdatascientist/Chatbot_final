@@ -220,10 +220,10 @@ def webhook():
                           exit_commands = ("cerrar", "salir", "partir", "chao", "hasta luego", "parar", "detener", "terminar")
                         #Method to start the conversation
                           def start_chat(self):
-                            user_response = input("hola"+"\n")
+                            user_response = input("Saludos, estoy entrenado para responder inquietudes de ciencia. ¿Que inquietud tienes?\n")
 
                             if user_response in self.negative_responses:
-                              print("Ok, Que tengas un gran dÃ­a!")
+                              print("Te deseo un buen dia!")
                               return
                             self.chat(user_response)
                         #Method to handle the conversation
@@ -254,7 +254,7 @@ def webhook():
                           def make_exit(self, reply):
                             for exit_command in self.exit_commands:
                               if exit_command in reply:
-                                print("Ok, Que tengas buen di­a!")
+                                print("Te deseo un buen dia!")
                                 return True
                             return False
 
