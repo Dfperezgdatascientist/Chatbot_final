@@ -167,7 +167,7 @@ def webhook():
                         #training_model.save()
                         training_model.save_weights(base_dir)
 
-                        entrenamiento = base_dir + 'my_weights.model.data-00000-of-00001' 
+                        entrenamiento = base_dir #+ 'my_weights.model.data-00000-of-00001' 
                         #training_model = load_model(entrenamiento)
                         #training_model.load_weights(entrenamiento)                        
                         training_model.load_weights(entrenamiento)
