@@ -62,7 +62,7 @@ def webhook():
                         base1 = os.getcwd()
                         base_dir= base1 + "/"
                         data_path = base_dir + "preguntaciencia.txt"
-                        data_path2 = base_dir + "respuestacisncia.txt"
+                        data_path2 = base_dir + "respuestaciencia.txt"
                         # Defining lines as a list of each line
                         with open(data_path, 'r', encoding='utf-8') as f:
                           lines = f.read().split('\n')
